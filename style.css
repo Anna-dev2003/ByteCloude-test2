@@ -1,0 +1,713 @@
+h1, h2, caption, h6, p, td{
+    font-family: 'Roboto', sans-serif !important;
+}
+#app-title{
+    display: inline-block;
+    font-size: 26px;
+    font-weight: 700;
+    padding-top: 30px;
+    color: rgb(60, 175, 255) ;
+}
+#submit-next, #submit-start{
+    display: none;
+    color: rgb(0, 121, 208) ;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+button:disabled{
+    opacity: 0.5;
+}
+.main-background{
+    background: linear-gradient(180deg, rgba(219,240,255,1) 0%, rgba(255,255,255,1) 100%);
+    height: 100vh;
+    text-align: center;
+}
+.map-block{
+    display: inline-block;
+    position: relative;
+}
+.areas-block{
+    position: absolute;
+    z-index: 9;
+}
+.canvas-field{
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+}
+.gadget{
+    position: absolute;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+}
+.result-block{
+    background-color:  rgb(60, 175, 255) ;
+    color: #ffffff;
+    padding: 5px;
+    z-index: 9;
+    position: relative;
+    top: -30px;
+    display: none;
+}
+
+.gadget > img{
+    width: 35px;
+}
+.laptop-screen, .smartphone-screen, .telephone-screen{
+    position: absolute;
+    background: rgb(0, 121, 208);
+    border-radius: 2px;
+    width: 0;
+}
+.laptop-screen{
+    height: 16px;
+    top: 8px;
+    left: 4px;
+}
+.smartphone-screen{
+    height: 25px;
+    top: 5px;
+    left: 9px;
+}
+.telephone-screen{
+    height: 7px;
+    top: 10px;
+    left: 12px;
+}
+
+.server > img{
+    width: 40px;
+}
+.server{
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+}
+.areas-block__men{
+    transition: 0.3s;
+}
+.man{
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+}
+.small-man{
+    width: 15px;
+}
+.medium-man{
+    width: 20px;
+}
+.big-man{
+    width: 25px;
+}
+
+.turn-phone__cont{
+    display: none;
+    background: linear-gradient(180deg, rgba(219,240,255,1) 0%, rgba(255,255,255,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.turn-phone__elem{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.turn-phone__title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: rgb(60, 175, 255) ;
+}
+
+#turn-phone__img{
+    width: 100px;
+    animation-name: orbit-top-left;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-delay: 0s;
+}
+
+#table-background{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+#table {
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+td, th, tr{
+    padding: 10px;
+    border: 2px solid rgb(60, 175, 255);
+}
+td{
+    background: rgba(219,240,255,1);
+}
+tbody{
+    border-radius: 5px;
+}
+.column-title{
+    font-size: 26px;
+    font-weight: 700;
+    padding: 20px 0;
+    color: rgb(0, 121, 208) ;
+}
+.table-row-title td{
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.row-title{
+    text-align: start;
+}
+
+.break-table{
+   background: none; 
+   border: none;
+   padding: 0;
+   color: transparent;
+}
+
+#reset-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.reset-title{
+    font-size: 26px;
+    font-weight: 700;
+    color: rgb(60, 175, 255) ;
+}
+#reset-block > img{
+    width: 50px;
+}
+.stars{
+    text-align: end;
+}
+.stars > img{
+    width: 20px;
+}
+
+
+@keyframes orbit-top-left {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-110deg);
+    }
+    80% {
+        transform: rotate(-110deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.show{
+    display: inline-block !important;
+}
+.hide{
+    display: none !important;
+}
+
+.gradual-hide{
+    opacity: 0 !important;
+    z-index: -99 !important;
+}
+
+.gradual-show{
+    opacity: 1 !important;
+}
+
+.server.gradual-show{
+    z-index: 99;
+}
+
+
+
+@media screen and (max-width: 1600px), (min-width: 1600px){
+    .map-block > img{
+        width: 1280px;
+    }
+    .areas-block#north-america{
+        top: 260px;
+        left: 280px;
+    }
+    .areas-block#south-america{
+        top: 490px;
+        left: 370px;
+    }
+    .areas-block#europe{
+        top: 250px;
+        left: 640px;
+    }
+    .areas-block#asia{
+        top: 350px;
+        left: 930px;
+    }
+    .areas-block#oceania{
+        top: 550px;
+        left: 1050px;
+    }
+    /* servers */
+    .server#northwestern-america-server{
+        top: 320px;
+        left: 170px;
+    }
+    .server#northeastern-america-server{
+        top: 300px;
+        left: 360px;
+    }
+    .server#europe-server{
+        top: 270px;
+        left: 620px;
+    }
+    .server#asia-server{
+        top: 480px;
+        left: 960px;
+    }
+    /* gadgets */
+    #north-america .laptop{
+        top: 0px;
+        left: 80px;
+    }
+    #north-america .smartphone{
+        left: 5px;
+        top: 50px;
+    }
+    #north-america .telephone{
+        left: -50px;
+        top: 10px;
+    }
+    #south-america .laptop{
+        top: 20px;
+        left: 40px;
+    }
+    #south-america .smartphone{
+        left: 10px;
+        top: 80px;
+    }
+    #south-america .telephone{
+        left: -10px;
+        top: -10px;
+    }
+    #europe .laptop{
+        top: 20px;
+        left: 20px;
+    }
+    #europe .smartphone{
+        left: -60px;
+        top: 50px;
+    }
+    #europe .telephone{
+        left: 90px;
+        top: -10px;
+    }
+    #asia .laptop{
+        top: 20px;
+        left: 60px;
+    }
+    #asia .smartphone{
+        left: -40px;
+        top: 40px;
+    }
+    #asia .telephone{
+        left: 100px;
+        top: -50px;
+    }
+    #oceania .laptop{
+        top: 20px;
+        left: 60px;
+    }
+    #oceania .smartphone{
+        left: -20px;
+        top: 30px;
+    }
+    #oceania .telephone{
+        left: 20px;
+        top: 20px;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    .map-block > img{
+        width: 1140px;
+    }
+    /* users */
+    .areas-block#north-america{
+        top: 230px;
+        left: 240px;
+    }
+    .areas-block#south-america{
+        top: 450px;
+        left: 330px;
+    }
+    .areas-block#europe{
+        top: 220px;
+        left: 570px;
+    }
+    .areas-block#asia{
+        top: 310px;
+        left: 820px;
+    }
+    .areas-block#oceania{
+        top: 490px;
+        left: 930px;
+    }
+    /* servers */
+    .server#northwestern-america-server{
+        top: 280px;
+        left: 150px;
+    }
+    .server#northeastern-america-server{
+        top: 270px;
+        left: 310px;
+    }
+    .server#europe-server{
+        top: 240px;
+        left: 550px;
+    }
+    .server#asia-server{
+        top: 430px;
+        left: 850px;
+    }
+
+}
+@media screen and (max-width: 1140px){
+    .map-block > img{
+        width: 1024px;
+    }
+    .areas-block#north-america{
+        top: 200px;
+        left: 220px;
+    }
+    .areas-block#south-america{
+        top: 400px;
+        left: 290px;
+    }
+    .areas-block#europe{
+        top: 200px;
+        left: 510px;
+    }
+    .areas-block#asia{
+        top: 270px;
+        left: 730px;
+    }
+    .areas-block#oceania{
+        top: 430px;
+        left: 830px;
+    }
+    /* servers */
+    .server#northwestern-america-server{
+        top: 250px;
+        left: 130px;
+    }
+    .server#northeastern-america-server{
+        top: 240px;
+        left: 280px;
+    }
+    .server#europe-server{
+        top: 210px;
+        left: 490px;
+    }
+    .server#asia-server{
+        top: 380px;
+        left: 770px;
+    }
+
+}
+
+@media screen and (max-width: 1024px){
+    .map-block > img{
+        width: 880px;
+    }
+    .server > img{
+        width: 30px;
+    }
+    .areas-block#north-america{
+        top: 180px;
+        left: 190px;
+    }
+    .areas-block#north-america .telephone{
+        top: -50px;
+        left: -70px;
+    }
+    .areas-block#south-america{
+        top: 360px;
+        left: 250px;
+    }
+    .areas-block#europe{
+        top: 170px;
+        left: 430px;
+    }
+    .areas-block#asia{
+        top: 230px;
+        left: 630px;
+    }
+    .areas-block#oceania{
+        top: 370px;
+        left: 710px;
+    }
+
+    .small-man{
+        width: 10px;
+    }
+    .medium-man{
+        width: 15px;
+    }
+    .big-man{
+        width: 20px;
+    }
+    /* servers */
+    .server#northwestern-america-server{
+        top: 200px;
+        left: 120px;
+    }
+    .server#northeastern-america-server{
+        top: 210px;
+        left: 230px;
+    }
+    .server#europe-server{
+        top: 190px;
+        left: 430px;
+    }
+    .server#asia-server{
+        top: 320px;
+        left: 660px;
+    }
+    /* gadget */
+    #north-america .laptop{
+        /* top: 0px; */
+        left: 40px;
+    }
+    #north-america .smartphone{
+        left: -20px;
+        /* top: 50px; */
+    }
+    #south-america .laptop{
+        left: 30px;
+    }
+    #south-america .smartphone{
+        left: 0px;
+        top: 60px;
+    }
+    #south-america .telephone{
+        left: 0px;
+        top: -20px;
+    }
+    #europe .smartphone{
+        left: -40px;
+    }
+    #asia .laptop{
+        top: 10px;
+        left: 40px;
+    }
+}
+@media screen and (max-width: 880px){
+    .map-block > img{
+        width: 768px;
+    }
+    .areas-block#north-america{
+        top: 160px;
+        left: 170px;
+    }
+    .areas-block#south-america{
+        top: 300px;
+        left: 220px;
+    }
+    .areas-block#europe{
+        top: 140px;
+        left: 380px;
+    }
+    .areas-block#asia{
+        top: 200px;
+        left: 550px;
+    }
+    .areas-block#oceania{
+        top: 320px;
+        left: 610px;
+    }
+
+    .server#northwestern-america-server {
+        top: 180px;
+        left: 100px;
+    }
+    .server#northeastern-america-server {
+        top: 190px;
+        left: 200px;
+    }
+    .server#europe-server {
+        top: 160px;
+        left: 380px;
+    }
+    .server#asia-server {
+        top: 280px;
+        left: 570px;
+    }
+
+    #asia .telephone {
+        left: 60px;
+        top: -50px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .map-block > img{
+        width: 640px;
+    }
+    .areas-block#north-america{
+        top: 130px;
+        left: 140px;
+    }
+    .areas-block#south-america{
+        top: 250px;
+        left: 190px;
+    }
+    .areas-block#europe{
+        top: 120px;
+        left: 320px;
+    }
+    .areas-block#asia{
+        top: 160px;
+        left: 450px;
+    }
+    .areas-block#oceania{
+        top: 270px;
+        left: 510px;
+    }
+
+    .small-man{
+        width: 8px;
+    }
+    .medium-man{
+        width: 13px;
+    }
+    .big-man{
+        width: 18px;
+    }
+    #europe .telephone {
+        left: 50px;
+        top: -10px;
+    }
+    #europe .smartphone {
+        left: -30px;
+        top: 30px;
+    }
+    #south-america .laptop {
+        left: 10px;
+    }
+    #south-america .smartphone {
+        left: -10px;
+    }
+    #asia .smartphone {
+        left: -20px;
+        top: 20px;
+    }
+    #oceania .smartphone {
+        top: 10px;
+    }
+    #oceania .laptop {
+    top: -10px;
+    left: 20px;
+    }
+
+    .server#northwestern-america-server {
+        top: 140px;
+        left: 80px;
+    }
+    .server#northeastern-america-server {
+        top: 160px;
+        left: 160px;
+    }
+    .server#europe-server {
+        top: 130px;
+        left: 310px;
+    }
+    .server#asia-server {
+        top: 230px;
+        left: 480px;
+    }
+
+    #table{
+        flex-direction: column;
+        align-items: center;
+    }
+    .result-block{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .map-block > img{
+        width: 530px;
+    }
+    .areas-block#north-america {
+        top: 100px;
+        left: 100px;
+    }
+    .areas-block#south-america {
+        top: 210px;
+        left: 150px;
+    }
+    .areas-block#europe {
+        top: 100px;
+        left: 260px;
+    }
+    .areas-block#asia{
+        top: 130px;
+        left: 360px;
+    }
+    .areas-block#oceania {
+        top: 210px;
+        left: 430px;
+    }
+    .server#northwestern-america-server {
+        top: 120px;
+        left: 70px;
+    }
+    .server#northeastern-america-server {
+        top: 130px;
+        left: 130px;
+    }
+    .server#europe-server {
+        top: 110px;
+        left: 260px;
+    }
+    .server#asia-server {
+        top: 190px;
+        left: 390px;
+    }
+}
+@media screen and (max-width: 530px){
+    .map-block{
+        display: none;
+    }
+}
+
+

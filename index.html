@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>ByteCloud</title>
+</head>
+<body>
+    <div class="main-background">
+        <div class="title">
+            <h1 id="app-title">Where are your users? Choose the number for every region.</h1>
+            <button id="submit-next">Next</button>
+            <button id="submit-start">Start</button>
+        </div>
+        <div class="map-block" id="map">
+            <img src="./img/map.png" alt="">
+            <div class="areas-block" id="north-america">
+                <p class="result-block">ll</p>
+                <div class="areas-block__men">
+                    <img class="small-man man" src="./img/man_empty.png" alt="little-man">
+                    <img class="medium-man man" src="./img/man_empty.png" alt="average-man">
+                    <img class="big-man man" src="./img/man_empty.png" alt="big-man">
+                </div>
+                <div class="areas-block__gadgets">
+                    <div class="laptop gadget">
+                        <img src="./img/small.png" alt="laptop">
+                        <div class="laptop-screen screen"></div>
+                    </div>
+                    <div class="smartphone gadget">
+                        <img src="./img/medium.png" alt="smartphone">
+                        <div class="smartphone-screen screen"></div>
+                    </div>
+                    <div class="telephone gadget">
+                        <img src="./img/large.png" alt="telephone">
+                        <div class="telephone-screen screen"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="areas-block" id="south-america">
+                <p class="result-block"></p>
+                <div class="areas-block__men">
+                    <img class="small-man man" src="./img/man_empty.png" alt="little-man">
+                    <img class="medium-man man" src="./img/man_empty.png" alt="average-man">
+                    <img class="big-man man" src="./img/man_empty.png" alt="big-man">
+                </div>
+                <div class="areas-block__gadgets">
+                    <div class="laptop gadget">
+                        <img src="./img/small.png" alt="laptop">
+                        <div class="laptop-screen screen"></div>
+                    </div>
+                    <div class="smartphone gadget">
+                        <img src="./img/medium.png" alt="smartphone">
+                        <div class="smartphone-screen screen"></div>
+                    </div>
+                    <div class="telephone gadget">
+                        <img src="./img/large.png" alt="telephone">
+                        <div class="telephone-screen screen"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="areas-block" id="europe">
+                <p class="result-block"></p>
+                <div class="areas-block__men">
+                    <img class="small-man man" src="./img/man_empty.png" alt="little-man">
+                    <img class="medium-man man" src="./img/man_empty.png" alt="average-man">
+                    <img class="big-man man" src="./img/man_empty.png" alt="big-man">
+                </div>
+                <div class="areas-block__gadgets">
+                    <div class="laptop gadget">
+                        <img src="./img/small.png" alt="laptop">
+                        <div class="laptop-screen screen"></div>
+                    </div>
+                    <div class="smartphone gadget">
+                        <img src="./img/medium.png" alt="smartphone">
+                        <div class="smartphone-screen screen"></div>
+                    </div>
+                    <div class="telephone gadget">
+                        <img src="./img/large.png" alt="telephone">
+                        <div class="telephone-screen screen"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="areas-block" id="asia">
+                <p class="result-block"></p>
+                <div class="areas-block__men">
+                    <img class="small-man man" src="./img/man_empty.png" alt="little-man">
+                    <img class="medium-man man" src="./img/man_empty.png" alt="average-man">
+                    <img class="big-man man" src="./img/man_empty.png" alt="big-man">
+                </div>
+                <div class="areas-block__gadgets">
+                    <div class="laptop gadget">
+                        <img src="./img/small.png" alt="laptop">
+                        <div class="laptop-screen screen"></div>
+                    </div>
+                    <div class="smartphone gadget">
+                        <img src="./img/medium.png" alt="smartphone">
+                        <div class="smartphone-screen screen"></div>
+                    </div>
+                    <div class="telephone gadget">
+                        <img src="./img/large.png" alt="telephone">
+                        <div class="telephone-screen screen"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="areas-block" id="oceania">
+                <p class="result-block"></p>
+                <div class="areas-block__men">
+                    <img class="small-man man" src="./img/man_empty.png" alt="little-man">
+                    <img class="medium-man man" src="./img/man_empty.png" alt="average-man">
+                    <img class="big-man man" src="./img/man_empty.png" alt="big-man">
+                </div>
+                <div class="areas-block__gadgets">
+                    <div class="laptop gadget">
+                        <img src="./img/small.png" alt="laptop">
+                        <div class="laptop-screen screen"></div>
+                    </div>
+                    <div class="smartphone gadget">
+                        <img src="./img/medium.png" alt="smartphone">
+                        <div class="smartphone-screen screen"></div>
+                    </div>
+                    <div class="telephone gadget">
+                        <img src="./img/large.png" alt="telephone">
+                        <div class="telephone-screen screen"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="server" id="northwestern-america-server">
+                <img src="./img/circle_empty.png" alt="">
+            </div>
+            <div class="server" id="northeastern-america-server">
+                <img src="./img/circle_empty.png" alt="">
+            </div>
+            <div class="server" id="europe-server">
+                <img src="./img/circle_empty.png" alt="">
+            </div>
+            <div class="server" id="asia-server">
+                <img src="./img/circle_empty.png" alt="">
+            </div>
+        </div>
+        <div id="turn-phone" class="turn-phone__cont">
+            <div class="turn-phone__elem">
+                <h1 class="turn-phone__title">Please turn your phone</h1>
+                <img id="turn-phone__img" src="./img/turning-phone.svg" alt="turning-phone">
+            </div>
+        </div>
+        <div id="table-background">
+            <table id="table">
+            </table>
+            <div id="reset-block">
+                <h2 class="reset-title">Reset</h2>
+                <img src="./img/circular.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/screenWidth.js"></script>
+    <script src="./scripts/choosingUsers.js"></script>
+    <script src="./scripts/chooseServers.js"></script>
+    <script src="./scripts/connectCalc.js"></script>
+    <script src="./scripts/drawLines.js"></script>
+    <script src="./scripts/makeFinalTable.js"></script>
+    <script src="./scripts/connectAnimate.js"></script>
+</body>
+</html>
