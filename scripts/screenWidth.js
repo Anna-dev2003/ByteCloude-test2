@@ -19,12 +19,12 @@ else if(screenWidth >= 640 && screenWidth < 768){
 }
 
 window.addEventListener('resize', () => {
-    if(screenWidth < 534){
+    if(document.documentElement.clientWidth <= 534){
         turnPhoneAnimation.classList.add('show')
         turnPhoneAnimation.classList.remove('hide')
     }else{
         turnPhoneAnimation.classList.remove('show')
-        turnPhoneAnimation.classList.hide('hide')
+        turnPhoneAnimation.classList.add('hide')
     }
 })
 
