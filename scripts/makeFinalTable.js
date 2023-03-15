@@ -26,7 +26,6 @@ function collectColumn(data, title, container){
 
     const sortedData = sortData(data);
     const ratedData = calculateRating(data);
-    console.log(ratedData)
 
     sortedData.forEach((item) => {
         for(let area in item){
@@ -34,7 +33,6 @@ function collectColumn(data, title, container){
             areaRow.classList.add('table-row')
 
             const areaTitle = area.split('-').map((name) => name[0].toUpperCase() + name.slice(1)).join(' ')
-            console.log(area)
 
             areaRow.innerHTML = `
                 <tbody>
@@ -63,35 +61,31 @@ function sortData(data){
 
 function calculateRating(data){
     const rating = {}
-    let bestResult = 0
-    data.forEach((area) => {
-        const result = area[Object.keys(area).join('')].time
-        if(result > bestResult){
-            bestResult = result
-        }
-    })
-    data.forEach((area) => {
-        const rate = area[Object.keys(area).join('')].time * 100 / bestResult;
-        let starsImg = {};
+    
+    data.forEach((obj) => {
+        const area = Object.keys(obj).join('')
+        const time = obj[area].time
+        let starsImg;
 
-        if(rate <= 100 && rate > 79){
-            starsImg = makeStars(4)
-            videoStreaming[Object.keys(area).join('')] = '480p'
-        }else if(rate <= 79 && rate > 59){
-            starsImg = makeStars(3)
-            videoStreaming[Object.keys(area).join('')] = '720p HD'
-        }else if(rate <= 59 && rate > 39){
-            starsImg = makeStars(2)
-            videoStreaming[Object.keys(area).join('')] = '1080p Full HD'
-        }else if(rate <= 39 && rate > 19){
-            starsImg = makeStars(1)
-            videoStreaming[Object.keys(area).join('')] = '4K/2160p Ultra HD'
-        }else if(rate <= 19 && rate > 0){
+        if(time <= 30){
             starsImg = makeStars(0)
-            videoStreaming[Object.keys(area).join('')] = '4K/2160p Ultra HD'
+            videoStreaming[area] = '4K/2160p Ultra HD'
+            
+        }else if(time <= 60 && time > 30){
+            starsImg = makeStars(1)
+            videoStreaming[area] = '4K/2160p Ultra HD'
+        }else if(time <= 90 && time > 60){
+            starsImg = makeStars(2)
+            videoStreaming[area] = '1080p Full HD'
+        }else if(time <= 120 && time > 90){
+            starsImg = makeStars(3)
+            videoStreaming[area] = '720p HD'
+        }else if(time > 120){
+            starsImg = makeStars(4)
+           videoStreaming[area] = '480p'
         }
         
-        rating[Object.keys(area).join('')] = starsImg.join('')
+        rating[area] = starsImg.join('')
     })
     return rating
 }

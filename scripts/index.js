@@ -67,9 +67,7 @@ const storageLatency = {
     }
 }
 const numberOfUsers = {}
-const videoStreaming = {
-    
-}
+const videoStreaming = {}
 
 resetBtn.addEventListener('click', () => {
     window.location.reload()
