@@ -16,7 +16,15 @@ else if(screenWidth >= 768 && screenWidth < 880){
 }
 else if(screenWidth >= 640 && screenWidth < 768){
     scaleFactor = 2
-}else if(screenWidth < 534){
-    turnPhoneAnimation.classList.add('show')
 }
+
+window.addEventListener('resize', () => {
+    if(screenWidth < 534){
+        turnPhoneAnimation.classList.add('show')
+        turnPhoneAnimation.classList.remove('hide')
+    }else{
+        turnPhoneAnimation.classList.remove('show')
+        turnPhoneAnimation.classList.hide('hide')
+    }
+})
 
